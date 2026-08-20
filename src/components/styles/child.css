@@ -82,3 +82,69 @@
     font-size: 21px;
     font-weight: 700;
   }
+
+  /*Progress Card*/
+  .progress-card {
+    border: 2px solid #ffc845;
+  
+    padding: 18px 20px;
+  
+    margin-bottom: 18px;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 16px;
+  }
+  /*Progress Circle*/
+  .progress-circle {
+    position: relative;
+  
+    width: 64px;
+    height: 64px;
+  
+    flex-shrink: 0;
+  }
+  
+  .progress-circle svg {
+    display: block;
+  }
+  
+  .progress-circle__icon {
+    position: absolute;
+  
+    inset: 0;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  }
+  /*Progress Text*/
+  .progress-info {
+    min-width: 0;
+  }
+  
+  .progress-info__title {
+    font-size: 18px;
+    font-weight: 700;
+  
+    line-height: 1.25;
+  
+    margin-bottom: 4px;
+  }
+  
+  .progress-info__stars {
+    font-size: 13px;
+  
+    color: #4a5568;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 4px;
+  }
+  
+  
