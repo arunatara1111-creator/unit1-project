@@ -1,5 +1,14 @@
+import React from "react";
+import ChildView from "./components/ChildView";
+
 function App() {
-  return <h1>Hello, LaunchCode</h1>
+  const handleBack = () => {
+    console.log("Back button clicked");
+  };
+
+  return (
+    <ChildView onBack={handleBack} />
+  );
 }
 
-export default App
+export default App;
