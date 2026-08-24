@@ -1,4 +1,5 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState,useRef } from "react";
+import confetti from "canvas-confetti";
 import { Sun,Moon } from "lucide-react";
 import Shell from "./Shell";  
 import TopBar from "./TopBar";
@@ -19,6 +20,7 @@ import { todayStr,storageGet,storageSet } from "./utils/storage";
   
     const [loading, setLoading] =
       useState(true);
+      const blastedRef = useRef(false);
   
     const date = todayStr();
   
@@ -86,6 +88,21 @@ import { todayStr,storageGet,storageSet } from "./utils/storage";
     const launched =
       pct === 100 &&
       tasks.length > 0;
+      useEffect(() => {
+        if (launched && !blastedRef.current) {
+          blastedRef.current = true;
+      
+          confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: { y: 0.6 }
+          });
+        }
+      
+        if (!launched) {
+          blastedRef.current = false;
+        }
+      }, [launched]);
   
     const morning =
       tasks.filter(
