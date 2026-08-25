@@ -1,6 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
-import { TOKENS } from "./constants/tokens";
+import { TOKENS } from "../constants/tokens";
 
 export default function TaskGroup({
   title,

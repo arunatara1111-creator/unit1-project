@@ -5,9 +5,9 @@ import Shell from "./Shell";
 import TopBar from "./TopBar";
 import TaskGroup from "./TaskGroup";
 import ProgressCard from "./ProgressCard";
-import { TOKENS } from "./constants/tokens";
-import { DEFAULT_TASKS } from "./data/tasks";  
-import { todayStr,storageGet,storageSet } from "./utils/storage";
+import { TOKENS } from "../constants/tokens";
+import { DEFAULT_TASKS } from "../data/tasks";  
+import { todayStr,storageGet,storageSet } from "../utils/storage";
   
   export default function ChildView({
     onBack,
