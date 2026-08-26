@@ -1,16 +1,26 @@
 import React from "react";
-import ChildView from "./components/childProfile/ChildView";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router";
+
+import ChildView from "./pages/childProfile/ChildView";
 
 function App() {
-  document.title = "Bright Steps";
-  
-  const handleBack = () => {
-    console.log("Back button clicked");
-  };
-
+ 
   return (
+    <BrowserRouter>
+    <Routes>
+       <Route
+          path="/child-profile"
+          element={<ChildView />}
+        />
+
+    </Routes>
+    </BrowserRouter>
+
     
-    <ChildView onBack={handleBack} />
   );
 }
 

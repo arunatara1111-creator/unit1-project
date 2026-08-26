@@ -86,5 +86,6 @@ export default function ProgressCard({
         </div>
       </div>
     </div>
+    
   );
 }
