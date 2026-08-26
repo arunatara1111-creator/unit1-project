@@ -1,6 +1,6 @@
 import React from "react";
 import { Rocket, Star } from "lucide-react";
-import { TOKENS } from "./constants/tokens";
+import { TOKENS } from "../constants/tokens";
 
 export default function ProgressCard({
   done,
@@ -86,5 +86,6 @@ export default function ProgressCard({
         </div>
       </div>
     </div>
+    
   );
 }
