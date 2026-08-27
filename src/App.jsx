@@ -7,8 +7,10 @@ import {
 import Header from "./layout/Header";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-
+import Home from "./pages/Home"
+import Details from "./pages/Details"
 import ChildView from "./pages/childProfile/ChildView";
+
 
 function App() {
   document.title = "Bright Steps";
@@ -24,7 +26,15 @@ function App() {
 
     <Routes>
 
-      
+    <Route
+        path="/"
+        element={<Home />}
+      />
+
+    <Route
+        path="/details"
+        element={<Details />}
+      />
       
       <Route
         path="/child-profile"
