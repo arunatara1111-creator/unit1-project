@@ -1,308 +1,615 @@
-/* Child View - Global Styling */
+Child.css
 
-   .child-app {
-    font-family:
-      "Nunito",
-      "Segoe UI",
-      sans-serif;
-  
-    background: #fffbf2;
-    color: #1e293b;
-  
-    min-height: 500px;
-  
-    border-radius: 20px;
-  
-    padding: 28px 24px 32px;
-  
-    max-width: 720px;
-  
-    margin: 0 auto;
-  
-    box-sizing: border-box;
-  }
-  .child-app .rmc-h1 {
-    font-family: "Baloo 2", sans-serif;
-  }
-  /* Buttons */
-  .child-app .rmc-btn {
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
-  }
-  
-  
-  .child-app .rmc-btn:active {
-    transform: scale(0.97);
-  }
-  
-  .child-app .rmc-btn:focus-visible {
-    outline: 3px solid #3fa9e0;
-    outline-offset: 2px;
-  }
-/*cards*/
-.child-app .rmc-card {
-  background: white;
-  border-radius: 16px;
+/* =========================================
+   BRIGHT STEPS - CHILD VIEW
+   ========================================= */
+
+.child-app {
+  min-height: 100vh;
+  background: #fffbf2;
+  color: #1e293b;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  padding: 24px;
   box-sizing: border-box;
 }
-/*Top Bar*/
- .top-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .top-bar__back {
-    background: white;
-  
-    border: 1.5px solid #d7dce4;
-  
-    border-radius: 10px;
-  
-    padding: 8px;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    transition:
-      transform 0.15s ease,
-      background 0.15s ease;
-  }
-  
-  .top-bar__back:hover {
-    background: #edeff3;
-  }
-  
-  .top-bar__title {
-    font-size: 21px;
-    font-weight: 700;
+
+/* =========================================
+   COMMON
+   ========================================= */
+
+.child-app * {
+  box-sizing: border-box;
+}
+
+.child-app button {
+  font-family: inherit;
+}
+
+/* Headings */
+.rmc-h1 {
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.top-bar {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 48px;
+}
+
+.top-bar__title {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.top-bar__back {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.rmc-btn {
+  border: 1px solid #d7dce4;
+  background: white;
+  color: #1e293b;
+
+  padding: 10px 16px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.rmc-btn:hover {
+  background: #f3f8fc;
+  box-shadow: 0 4px 12px rgba(30, 41, 59, 0.08);
+}
+
+.rmc-btn:active {
+  transform: scale(0.97);
+}
+
+.rmc-btn:focus-visible {
+  outline: 3px solid rgba(63, 169, 224, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   CHILD GREETING
+   ========================================= */
+
+.child-greeting {
+  max-width: 900px;
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 24px;
+
+  background: white;
+  border: 1px solid #d7dce4;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.06);
+}
+
+.child-greeting h1 {
+  margin: 0 0 8px;
+
+  font-size: 30px;
+  font-weight: 800;
+  color: #1d6fa5;
+}
+
+.child-greeting p {
+  margin: 0;
+
+  color: #4a5568;
+  font-size: 16px;
+}
+
+.child-avatar {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #fff4c7;
+  border-radius: 50%;
+
+  font-size: 34px;
+}
+
+/* =========================================
+   DATE NAVIGATION
+   ========================================= */
+
+.date-navigation {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 12px 0;
+}
+
+.date-navigation strong {
+  font-size: 17px;
+  color: #1e293b;
+}
+
+/* =========================================
+   PROGRESS CARD
+   ========================================= */
+
+.rmc-card {
+  background: white;
+  border: 1px solid #d7dce4;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.06);
+}
+
+.progress-card {
+  max-width: 900px;
+  margin: 0 auto 24px;
+
+  padding: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress-circle {
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+}
+
+.progress-circle svg {
+  display: block;
+}
+
+.progress-circle__icon {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-info {
+  flex: 1;
+}
+
+.progress-info__title {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.progress-info__stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #b8860b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================
+   COMPLETION MESSAGE
+   ========================================= */
+
+.completion-message {
+  max-width: 900px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  border: 2px solid #4fb88d;
+
+  box-shadow: 0 10px 25px rgba(79, 184, 141, 0.15);
+
+  animation: completionPop 0.45s ease;
+}
+
+.completion-message h2 {
+  margin: 8px 0;
+
+  color: #2e7d5e;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.completion-message p {
+  margin: 0;
+
+  color: #4a5568;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@keyframes completionPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
 
-  /*Progress Card*/
-  .progress-card {
-    border: 2px solid #ffc845;
-  
-    padding: 18px 20px;
-  
-    margin-bottom: 18px;
-  
-    display: flex;
-    align-items: center;
-  
-    gap: 16px;
+  70% {
+    transform: scale(1.03);
   }
-  /*Progress Circle*/
-  .progress-circle {
-    position: relative;
-  
-    width: 64px;
-    height: 64px;
-  
-    flex-shrink: 0;
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .progress-circle svg {
-    display: block;
-  }
-  
-  .progress-circle__icon {
-    position: absolute;
-  
-    inset: 0;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  }
-  /*Progress Text*/
-  .progress-info {
-    min-width: 0;
-  }
-  
-  .progress-info__title {
-    font-size: 18px;
-    font-weight: 700;
-  
-    line-height: 1.25;
-  
-    margin-bottom: 4px;
-  }
-  
-  .progress-info__stars {
-    font-size: 13px;
-  
-    color: #4a5568;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 4px;
-  }
-  /* Task Group */
+}
+
+/* =========================================
+   TASK GROUP
+   ========================================= */
 
 .task-group {
-    margin-bottom: 18px;
-  }
-  
-  .task-group__header {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 8px;
-  
-    margin-bottom: 8px;
-  
-    padding-left: 2px;
-  }
-  
-  .task-group__title {
-    font-weight: 700;
-  
-    font-size: 14px;
-  }
-  
-  .task-group__list {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: 8px;
-  }
-  /*Task Button*/
-  .task-button {
-    border-radius: 16px;
-  
-    padding: 12px 14px;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    gap: 12px;
-  
-    text-align: left;
-  
-    width: 100%;
-  
-    transition:
-      transform 0.15s ease,
-      border-color 0.15s ease,
-      background 0.15s ease,
-      box-shadow 0.15s ease;
-  }
-  
-  .task-button:hover {
-    box-shadow:
-      0 3px 10px rgba(30, 41, 59, 0.08);
-  
-    transform: translateY(-1px);
-  }
-  
-  .task-button:active {
-    transform: scale(0.98);
-  }
-  /* Checkbox */
-  
-  .task-checkbox {
-    width: 26px;
-  
-    height: 26px;
-  
-    border-radius: 8px;
-  
-    flex-shrink: 0;
-  
-    display: flex;
-  
-    align-items: center;
-  
-    justify-content: center;
-  }
-  /* Responsive Design */
+  width: 100%;
+  max-width: 700px;
 
-    
-  @media (max-width: 600px) {
-    .child-app {
-      min-height: 100vh;
-  
-      border-radius: 0;
-  
-      padding: 20px 16px 28px;
-    }
-  
-    .top-bar__title {
-      font-size: 19px;
-    }
-  
-    .progress-card {
-      padding: 16px;
-    }
-  
-    .progress-info__title {
-      font-size: 16px;
-    }
-  
-    .task-button {
-      padding: 11px 12px;
-    }
-  
-    .task-label {
-      font-size: 14px;
-    }
+  margin: 0 auto 28px;
+}
+
+.task-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-bottom: 14px;
+
+  text-align: center;
+}
+
+.task-group-heading h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  color: #1e293b;
+}
+
+/* =========================================
+   TASK LIST
+   ========================================= */
+
+.task-group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual task */
+.child-task {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 15px 18px;
+
+  border: 1px solid #d7dce4;
+  border-radius: 14px;
+
+  background: white;
+  color: #1e293b;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.child-task:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(30, 41, 59, 0.08);
+
+  border-color: #3fa9e0;
+}
+
+.child-task:active {
+  transform: scale(0.99);
+}
+
+.child-task.completed {
+  background: #eefaf5;
+  border-color: #4fb88d;
+}
+
+/* =========================================
+   TASK CHECK
+   ========================================= */
+
+.task-check {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 2px solid #d7dce4;
+  border-radius: 8px;
+
+  background: white;
+
+  color: white;
+}
+
+.child-task.completed .task-check {
+  background: #4fb88d;
+  border-color: #4fb88d;
+}
+
+/* =========================================
+   TASK TIME
+   ========================================= */
+
+.task-time {
+  min-width: 55px;
+
+  color: #1d6fa5;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* =========================================
+   TASK LABEL
+   ========================================= */
+
+.task-label {
+  flex: 1;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #1e293b;
+}
+
+.child-task.completed .task-label {
+  color: #2e7d5e;
+  text-decoration: line-through;
+}
+
+/* =========================================
+   STAR
+   ========================================= */
+
+.task-star {
+  font-size: 20px;
+
+  animation: starPop 0.3s ease;
+}
+
+@keyframes starPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
-  /* Task Time */
-  
-     .task-time {
-      font-size: 12px;
-    
-      color: #4a5568;
-    
-      width: 44px;
-    
-      flex-shrink: 0;
-    }
-    
-    /* Task Label */
-    
-    .task-label {
-      font-weight: 700;
-    
-      font-size: 15px;
-    
-      line-height: 1.3;
-    
-      transition:
-        color 0.15s ease,
-        text-decoration 0.15s ease;
-    }
-    
-    /* Empty State */
-    
-    .empty-state {
-      text-align: center;
-    
-      padding: 30px;
-    
-      color: #4a5568;
-    
-      font-size: 14px;
-    }
-    
-    /* Loading */
-    
-    .loading-state {
-      text-align: center;
-    
-      padding: 60px;
-    
-      color: #4a5568;
-    
-      font-size: 15px;
-    }
+
+  70% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+   EMPTY TASKS
+   ========================================= */
+
+.empty-tasks {
+  max-width: 700px;
+  margin: 20px auto;
+
+  background: white;
+
+  border: 1px solid #d7dce4;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.05);
+}
+
+.empty-tasks h2 {
+  margin: 10px 0;
+
+  color: #1e293b;
+}
+
+.empty-tasks p {
+  margin: 0;
+
+  color: #4a5568;
+}
+
+/* =========================================
+   ENCOURAGEMENT
+   ========================================= */
+
+.encouragement {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: #4a5568;
+}
+
+.encouragement p {
+  margin: 8px 0 0;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.child-loading {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #4a5568;
+}
+
+.child-loading h2 {
+  margin: 14px 0 6px;
+
+  color: #1d6fa5;
+}
+
+.child-loading p {
+  margin: 0;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+  .child-app {
+    padding: 16px;
+  }
+
+  .child-greeting {
+    padding: 18px;
+  }
+
+  .child-greeting h1 {
+    font-size: 24px;
+  }
+
+  .child-avatar {
+    width: 56px;
+    height: 56px;
+
+    font-size: 27px;
+  }
+
+  .progress-card {
+    padding: 18px;
+  }
+
+  .progress-info__title {
+    font-size: 17px;
+  }
+
+  .task-group-heading h2 {
+    font-size: 20px;
+  }
+
+  .child-task {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .task-time {
+    min-width: 48px;
+    font-size: 13px;
+  }
+
+  .task-label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar__title {
+    font-size: 21px;
+  }
+
+  .child-greeting {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .date-navigation {
+    gap: 8px !important;
+  }
+
+  .rmc-btn {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .progress-card {
+    gap: 12px;
+  }
+
+  .progress-circle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .progress-circle svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .task-time {
+    min-width: 45px;
+  }
+
+  .task-star {
+    font-size: 17px;
+  }
+}
+
+

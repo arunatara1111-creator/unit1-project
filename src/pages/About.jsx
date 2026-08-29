@@ -1,6 +1,6 @@
 import React from "react";
 
-function Details() {
+function About() {
   return (
     <main className="home">
 
@@ -102,4 +102,4 @@ function Details() {
   );
 }
 
-export default Details;
+export default About;

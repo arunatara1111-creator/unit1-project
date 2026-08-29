@@ -9,8 +9,8 @@ function Navbar() {
         Home
       </NavLink>
 
-      <NavLink to="/details">
-        Details
+      <NavLink to="/about">
+        About
       </NavLink>
 
       <NavLink to="/child-profile">

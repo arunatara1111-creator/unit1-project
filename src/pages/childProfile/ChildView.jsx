@@ -1,6 +1,6 @@
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Sun, Moon, Check, Star, Rocket } from "lucide-react";
+import { Sun, Moon, Star, Rocket } from "lucide-react";
 
 import Shell from "./Shell";
 import TopBar from "./TopBar";
