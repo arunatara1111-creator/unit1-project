@@ -1,6 +1,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { Sun, Moon, Star, Rocket } from "lucide-react";
+import confetti from "canvas-confetti";
 
 import Shell from "./Shell";
 import TopBar from "./TopBar";
@@ -294,20 +295,48 @@ export default function ChildView({ onBack }) {
     // All tasks completed
     if (
       tasks.length > 0 &&
-      newCompletedCount ===
-        tasks.length
+      newCompletedCount === tasks.length
     ) {
-
       setLaunched(true);
-
+    
+      // 🎉 Blast animation
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        startVelocity: 45,
+        origin: {
+          x: 0.5,
+          y: 0.6,
+        },
+      });
+    
+      // 🚀 Second blast
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 140,
+          startVelocity: 35,
+          origin: {
+            x: 0.2,
+            y: 0.7,
+          },
+        });
+    
+        confetti({
+          particleCount: 100,
+          spread: 140,
+          startVelocity: 35,
+          origin: {
+            x: 0.8,
+            y: 0.7,
+          },
+        });
+      }, 300);
+    
     } else {
-
       setLaunched(false);
-
     }
-
   };
-
   // DATE CHANGE
   
 

@@ -51,6 +51,21 @@ function About() {
               support their child's progress.
             </p>
           </div>
+          <div>
+            <h3>Teacher Support</h3>
+            <p>
+              Teachers can help children stay focused
+              and organized.
+            </p>
+          </div>
+
+          <div>
+            <h3>Doctor Support</h3>
+            <p>
+              Doctors and healthcare professionals can
+              review useful progress information.
+            </p>
+          </div>
 
         </div>
       </section>
@@ -63,6 +78,8 @@ function About() {
 
           <div>Children</div>
           <div>Parents</div>
+          <div>Teachers</div>
+          <div>Doctors</div>
           
         </div>
       </section>
@@ -71,15 +88,15 @@ function About() {
       <section>
         <h2>How Bright Steps Works</h2>
 
-        <p>1. The child views their daily tasks.</p>
+        <li>1. The child views their daily tasks.</li>
 
-        <p>2. The child completes each task.</p>
+        <li>2. The child completes each task.</li>
 
-        <p>3. Completed tasks are recorded.</p>
+        <li>3. Completed tasks are recorded.</li>
 
-        <p>4. Parents can review progress.</p>
+        <li>4. Parents can review progress.</li>
 
-        <p>5. The child builds consistent daily habits.</p>
+        <li>5. The child builds consistent daily habits.</li>
       </section>
 
 

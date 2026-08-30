@@ -76,14 +76,24 @@ section h2 {
   text-align: center;
   color: #0f766e;
 }
-
+section h3 {
+  text-align: center;
+  color: #274a47;
+}
 section p {
   max-width: 600px;
   margin: 15px auto;
   line-height: 1.6;
   text-align: center;
 }
-
+section li {
+  list-style: none;
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  padding: 0;
+  text-align: center;
+}
 
 /* Hero */
 

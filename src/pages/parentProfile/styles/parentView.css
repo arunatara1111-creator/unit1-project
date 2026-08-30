@@ -30,10 +30,14 @@
   
   /* Buttons */
   
-  .rmc-btn {
+  .rmc-btn:hover  {
     cursor: pointer;
     border: none;
     font-family: inherit;
+      
+    background-color: #4694c9;
+    transform: translateY(-2px);
+    
   }
   
   .rmc-btn:active {
