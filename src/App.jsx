@@ -8,8 +8,9 @@ import Header from "./layout/Header";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import Home from "./pages/Home"
-import Details from "./pages/Details"
+import About from "./pages/About"
 import ChildView from "./pages/childProfile/ChildView";
+import ParentView from "./pages/parentProfile/ParentView";
 
 
 function App() {
@@ -32,13 +33,18 @@ function App() {
       />
 
     <Route
-        path="/details"
-        element={<Details />}
+        path="/about"
+        element={<About />}
       />
       
       <Route
         path="/child-profile"
         element={<ChildView />}
+      />
+
+      <Route
+        path="/parent-profile"
+        element={<ParentView />}
       />
 
     </Routes>

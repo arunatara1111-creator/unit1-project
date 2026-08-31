@@ -1,6 +1,9 @@
+
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import { TOKENS } from "../constants/tokens";
+
+import { TOKENS } from "../pages/constants/tokens";
+import Button from "./Button";
 
 export default function TopBar({
   title,
@@ -8,10 +11,12 @@ export default function TopBar({
   accent,
 }) {
   return (
-    <div className="top-bar">
+    <div className="rmc-topbar">
+
       {onBack && (
-        <button
-          className="rmc-btn top-bar__back"
+        <Button
+          variant="secondary"
+          className="rmc-back-btn"
           onClick={onBack}
           aria-label="Back"
         >
@@ -19,17 +24,20 @@ export default function TopBar({
             size={18}
             color={TOKENS.inkSoft}
           />
-        </button>
+        </Button>
       )}
 
       <div
-        className="rmc-h1 top-bar__title"
+        className="rmc-h1"
         style={{
+          fontSize: 21,
+          fontWeight: 700,
           color: accent || TOKENS.ink,
         }}
       >
         {title}
       </div>
+
     </div>
   );
 }

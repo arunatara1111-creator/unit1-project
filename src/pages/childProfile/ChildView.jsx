@@ -1,9 +1,10 @@
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Sun, Moon, Check, Star, Rocket } from "lucide-react";
+import { Sun, Moon, Star, Rocket } from "lucide-react";
+import confetti from "canvas-confetti";
 
 import Shell from "./Shell";
-import TopBar from "./TopBar";
+import TopBar from "../../components/TopBar";
 import TaskGroup from "./TaskGroup";
 import ProgressCard from "./ProgressCard";
 
@@ -16,6 +17,7 @@ import {
 } from "../utils/storage";
 
 import { TOKENS } from "../constants/tokens";
+import Button from "../../components/Button";
 
 export default function ChildView({ onBack }) {
 
@@ -294,20 +296,48 @@ export default function ChildView({ onBack }) {
     // All tasks completed
     if (
       tasks.length > 0 &&
-      newCompletedCount ===
-        tasks.length
+      newCompletedCount === tasks.length
     ) {
-
       setLaunched(true);
-
+    
+      // 🎉 Blast animation
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        startVelocity: 45,
+        origin: {
+          x: 0.5,
+          y: 0.6,
+        },
+      });
+    
+      // 🚀 Second blast
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 140,
+          startVelocity: 35,
+          origin: {
+            x: 0.2,
+            y: 0.7,
+          },
+        });
+    
+        confetti({
+          particleCount: 100,
+          spread: 140,
+          startVelocity: 35,
+          origin: {
+            x: 0.8,
+            y: 0.7,
+          },
+        });
+      }, 300);
+    
     } else {
-
       setLaunched(false);
-
     }
-
   };
-
   // DATE CHANGE
   
 
@@ -377,7 +407,6 @@ export default function ChildView({ onBack }) {
 
       <TopBar
         title="My Bright Steps"
-        onBack={onBack}
         accent={TOKENS.skyDeep}
       />
 
@@ -416,15 +445,13 @@ export default function ChildView({ onBack }) {
           marginBottom: 20,
         }}
       >
-
-        <button
-          className="rmc-btn"
-          onClick={() =>
-            changeDate(-1)
-          }
-        >
-          ← Previous
-        </button>
+    <Button
+     variant="secondary"
+     onClick={() => changeDate(-1)}
+    >
+    ← Previous
+    </Button>
+ 
 
 
         <strong>
@@ -434,14 +461,14 @@ export default function ChildView({ onBack }) {
         </strong>
 
 
-        <button
-          className="rmc-btn"
+        <Button
+          variant="primary"
           onClick={() =>
             changeDate(1)
           }
         >
           Next →
-        </button>
+        </Button>
 
       </div>
 

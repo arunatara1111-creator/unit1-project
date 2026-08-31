@@ -1,0 +1,68 @@
+
+.custom-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Primary */
+.custom-button.primary {
+  background-color: #3FA9E0;
+  color: white;
+}
+
+.custom-button.primary:hover {
+  background-color: #1D6FA5;
+  transform: translateY(-2px);
+}
+
+/* Success */
+.custom-button.success {
+  background-color: #4FB88D;
+  color: white;
+}
+
+.custom-button.success:hover {
+  background-color: #2E7D5E;
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+.custom-button.secondary {
+  background-color: #FFC845;
+  color: #1E293B;
+}
+
+.custom-button.secondary:hover {
+  background-color: #B8860B;
+  transform: translateY(-2px);
+}
+
+/* Danger */
+.custom-button.danger {
+  background-color: #FF6F59;
+  color: white;
+}
+
+.custom-button.danger:hover {
+  background-color: #B8402C;
+  transform: translateY(-2px);
+}
+
+/* Disabled */
+.custom-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Keyboard focus */
+.custom-button:focus-visible {
+  outline: 3px solid #FFC845;
+  outline-offset: 3px;
+}

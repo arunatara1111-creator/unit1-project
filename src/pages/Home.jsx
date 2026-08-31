@@ -24,13 +24,20 @@ function Home() {
 
         <h2>What is ADHD?</h2>
 
-        <p>
-          ADHD is a neurodevelopmental condition that can affect
-          attention, organization, activity level, impulse control,
-          and emotional regulation.
-        </p>
+            <p>
+              ADHD is a neurodevelopmental condition that can affect
+              attention, organization, activity level, impulse control,
+              and emotional regulation.
+            </p>
+        <h3>People with ADHD may experience challenges such as:</h3>
 
-      </section>
+              <p>Difficulty staying focused on tasks.</p>
+              <p>Forgetting appointments, instructions, or responsibilities.</p>
+              <p>Difficulty organizing tasks and managing time.</p>
+              <p>Acting or speaking before thinking.</p>
+              <p>Finding it difficult to sit still for long periods.</p>
+              <p>Switching between tasks or losing track of what they were doing.</p>
+        </section>
 
 
       <section>
