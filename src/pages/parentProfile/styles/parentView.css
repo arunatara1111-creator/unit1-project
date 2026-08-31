@@ -1,266 +1,335 @@
 /* Main application */
 
 .rmc-shell {
-    font-family:
-      "Nunito",
-      "Segoe UI",
-      sans-serif;
-  
-    background: #fffbf2;
-    color: #1e293b;
-  
-    min-height: 500px;
-    border-radius: 20px;
-  
-    padding: 28px 24px 32px;
-  
-    max-width: 720px;
-    margin: 0 auto;
-  
-    box-sizing: border-box;
-  }
-  
-  /* Fonts */
-  
-  .rmc-h1 {
-    font-family: "Baloo 2", sans-serif;
-  }
-  
-  /* Buttons */
-  
-  .rmc-btn:hover  {
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
+  font-family:
+    "Nunito",
+    "Segoe UI",
+    sans-serif;
 
-    background-color: #4694c9;
-    transform: translateY(-2px);
-    
-  }
+  background: #fffbf2;
+  color: #1e293b;
+
+  min-height: 500px;
+  border-radius: 20px;
+
+  padding: 28px 24px 32px;
+
+  max-width: 720px;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+/* Fonts */
+
+.rmc-h1 {
+  font-family: "Baloo 2", sans-serif;
+}
+
+/* Buttons */
+
+.rmc-btn:hover  {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+
+  background-color: #4694c9;
+  transform: translateY(-2px);
   
-  .rmc-btn:active {
-    transform: scale(0.97);
+}
+
+.rmc-btn:active {
+  transform: scale(0.97);
+}
+
+.rmc-icon-btn {
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Cards */
+
+.rmc-card {
+  background: white;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+/* Top bar */
+
+.rmc-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Statistics */
+
+.rmc-stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rmc-stat-card {
+  flex: 1;
+  border: 1px solid #d7dce4;
+  padding: 14px;
+}
+
+.rmc-stat-label {
+  font-size: 12px;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+.rmc-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Chart */
+
+.rmc-section-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.rmc-chart-card {
+  border: 1px solid #d7dce4;
+  padding: 12px;
+  margin-bottom: 24px;
+  height: 160px;
+}
+
+/* Task list */
+
+.rmc-task-list {
+  border: 1px solid #d7dce4;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.rmc-task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rmc-task-table th {
+  padding: 0;
+  border: 0;
+}
+
+.rmc-task-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #edeff3;
+
+  font-size: 14px;
+}
+
+.rmc-task-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rmc-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  white-space: nowrap;
+}
+
+.rmc-task-period {
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.rmc-task-period.morning {
+  color: #1d6fa5;
+}
+
+.rmc-task-time {
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+.rmc-task-label {
+  width: 100%;
+  text-align: center
+}
+
+.rmc-task-actions {
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.rmc-delete-btn {
+  background: none;
+  padding: 4px;
+}
+
+/* Empty task list */
+
+.rmc-empty {
+  font-size: 13px;
+  color: #4a5568;
+  padding: 8px 0;
+}
+
+/* Add task */
+
+.rmc-add-task {
+  border: 1px dashed #d7dce4;
+  padding: 14px;
+}
+
+.rmc-add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Inputs */
+
+.rmc-input,
+.rmc-select {
+  border: 1px solid #d7dce4;
+  border-radius: 8px;
+
+  padding: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+.rmc-select {
+  padding: 8px 6px;
+}
+
+.rmc-time-input {
+  width: 60px;
+}
+
+.rmc-label-input {
+  flex: 1;
+  padding: 8px 10px;
+}
+
+/* Add button */
+
+.rmc-add-btn {
+  background: #3fa9e0;
+  color: white;
+
+  border-radius: 8px;
+
+  padding: 8px 14px;
+
+  font-weight: 700;
+  font-size: 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* Loading */
+
+.rmc-loading {
+  text-align: center;
+  padding: 60px;
+  color: #4a5568;
+}
+
+/* Edit task modal */
+
+.rmc-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(30, 41, 59, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  box-sizing: border-box;
+
+  z-index: 100;
+}
+
+.rmc-modal {
+  width: 100%;
+  max-width: 340px;
+
+  padding: 20px;
+
+  box-shadow: 0 12px 32px rgba(30, 41, 59, 0.25);
+}
+
+.rmc-modal-title {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.rmc-modal .rmc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-bottom: 12px;
+}
+
+.rmc-modal .rmc-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a5568;
+}
+
+.rmc-modal .rmc-input {
+  width: 100%;
+}
+
+.rmc-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .rmc-shell {
+    padding: 20px 16px 24px;
+    border-radius: 14px;
   }
 
-  .rmc-icon-btn {
-    padding: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-  }
-  
-  /* Cards */
-  
-  .rmc-card {
-    background: white;
-    border-radius: 16px;
-    box-sizing: border-box;
-  }
-  
-  /* Top bar */
-  
-  .rmc-topbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Statistics */
-  
-  .rmc-stats {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  
-  .rmc-stat-card {
-    flex: 1;
-    border: 1px solid #d7dce4;
-    padding: 14px;
-  }
-  
-  .rmc-stat-label {
-    font-size: 12px;
-    color: #4a5568;
-    margin-bottom: 4px;
-  }
-  
-  .rmc-stat-value {
-    font-size: 22px;
-    font-weight: 700;
-  }
-  
-  /* Chart */
-  
-  .rmc-section-title {
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-  
-  .rmc-chart-card {
-    border: 1px solid #d7dce4;
-    padding: 12px;
-    margin-bottom: 24px;
-    height: 160px;
-  }
-  
-  /* Task list */
-  
-  .rmc-task-list {
-    border: 1px solid #d7dce4;
-    padding: 14px;
-    margin-bottom: 14px;
-  }
-  
-  .rmc-task {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  
-    padding: 8px 0;
-  
-    border-bottom: 1px solid #edeff3;
-  }
-  
-  .rmc-task:last-child {
-    border-bottom: none;
-  }
-  
-  .rmc-task-period {
-    font-size: 10px;
-    font-weight: 700;
-  
-    text-transform: uppercase;
-  
-    width: 62px;
-    flex-shrink: 0;
-  }
-  
-  .rmc-task-period.morning {
-    color: #1d6fa5;
-  }
-  
-  .rmc-task-period.afternoon {
-    color: #2e7d5e;
-  }
-  
-  .rmc-task-time {
-    font-size: 12px;
-    color: #4a5568;
-  
-    width: 42px;
-    flex-shrink: 0;
-  }
-  
-  .rmc-task-label {
-    flex: 1;
-    font-size: 14px;
-  }
-  
-  .rmc-delete-btn {
-    background: none;
-    padding: 4px;
-  }
-  
-  /* Empty task list */
-  
-  .rmc-empty {
-    font-size: 13px;
-    color: #4a5568;
-    padding: 8px 0;
-  }
-  
-  /* Add task */
-  
-  .rmc-add-task {
-    border: 1px dashed #d7dce4;
-    padding: 14px;
-  }
-  
   .rmc-add-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
+    flex-wrap: wrap;
   }
-  
-  /* Inputs */
-  
-  .rmc-input,
-  .rmc-select {
-    border: 1px solid #d7dce4;
-    border-radius: 8px;
-  
-    padding: 8px;
-  
-    font-family: inherit;
-    font-size: 13px;
-  
-    box-sizing: border-box;
-  }
-  
-  .rmc-select {
-    padding: 8px 6px;
-  }
-  
-  .rmc-time-input {
-    width: 60px;
-  }
-  
+
   .rmc-label-input {
-    flex: 1;
-    padding: 8px 10px;
+    min-width: 150px;
   }
-  
-  /* Add button */
-  
-  .rmc-add-btn {
-    background: #3fa9e0;
-    color: white;
-  
-    border-radius: 8px;
-  
-    padding: 8px 14px;
-  
-    font-weight: 700;
-    font-size: 13px;
-  
-    display: flex;
-    align-items: center;
-  
-    gap: 6px;
+
+  .rmc-stats {
+    flex-direction: column;
   }
-  
-  /* Loading */
-  
-  .rmc-loading {
-    text-align: center;
-    padding: 60px;
-    color: #4a5568;
-  }
-  
-  /* Responsive */
-  
-  @media (max-width: 600px) {
-    .rmc-shell {
-      padding: 20px 16px 24px;
-      border-radius: 14px;
-    }
-  
-    .rmc-add-row {
-      flex-wrap: wrap;
-    }
-  
-    .rmc-label-input {
-      min-width: 150px;
-    }
-  
-    .rmc-stats {
-      flex-direction: column;
-    }
-  }
-  
-  
-  
+}

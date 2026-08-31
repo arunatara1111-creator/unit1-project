@@ -1,5 +1,3 @@
-import React from "react";
-
 function About() {
   return (
     <main className="home">
@@ -87,16 +85,17 @@ function About() {
 
       <section>
         <h2>How Bright Steps Works</h2>
+        <ul>
+            <li>1. The child views their daily tasks.</li>
 
-        <li>1. The child views their daily tasks.</li>
+            <li>2. The child completes each task.</li>
 
-        <li>2. The child completes each task.</li>
+            <li>3. Completed tasks are recorded.</li>
 
-        <li>3. Completed tasks are recorded.</li>
+            <li>4. Parents can review progress.</li>
 
-        <li>4. Parents can review progress.</li>
-
-        <li>5. The child builds consistent daily habits.</li>
+            <li>5. The child builds consistent daily habits.</li>
+        </ul>
       </section>
 
 

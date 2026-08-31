@@ -416,13 +416,12 @@ export default function ChildView({ onBack }) {
 
         <div>
 
-          <h1>
+          <h2>
             Hi, Superstar! ⭐
-          </h1>
+          </h2>
 
           <p>
-            Let's complete your steps
-            for today.
+             Let's complete your steps for today.
           </p>
 
         </div>

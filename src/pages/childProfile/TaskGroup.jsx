@@ -24,7 +24,7 @@ export default function TaskGroup({
     </div>
 
 
-    <div className="task-group-list">
+    <ul className="task-group-list">
 
       {tasks.map((task) => {
 
@@ -34,8 +34,9 @@ export default function TaskGroup({
 
         return (
 
+          <li key={task.id}>
+
           <button
-            key={task.id}
             className={`child-task ${
               completed
                 ? "completed"
@@ -75,11 +76,13 @@ export default function TaskGroup({
 
           </button>
 
+          </li>  
+
         );
 
       })}
 
-    </div>
+    </ul>
 
   </section>
 );
