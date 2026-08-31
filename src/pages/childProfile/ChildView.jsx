@@ -4,7 +4,7 @@ import { Sun, Moon, Star, Rocket } from "lucide-react";
 import confetti from "canvas-confetti";
 
 import Shell from "./Shell";
-import TopBar from "./TopBar";
+import TopBar from "../../components/TopBar";
 import TaskGroup from "./TaskGroup";
 import ProgressCard from "./ProgressCard";
 
@@ -17,6 +17,7 @@ import {
 } from "../utils/storage";
 
 import { TOKENS } from "../constants/tokens";
+import Button from "../../components/Button";
 
 export default function ChildView({ onBack }) {
 
@@ -406,7 +407,6 @@ export default function ChildView({ onBack }) {
 
       <TopBar
         title="My Bright Steps"
-        onBack={onBack}
         accent={TOKENS.skyDeep}
       />
 
@@ -445,15 +445,13 @@ export default function ChildView({ onBack }) {
           marginBottom: 20,
         }}
       >
-
-        <button
-          className="rmc-btn"
-          onClick={() =>
-            changeDate(-1)
-          }
-        >
-          ← Previous
-        </button>
+    <Button
+     variant="secondary"
+     onClick={() => changeDate(-1)}
+    >
+    ← Previous
+    </Button>
+ 
 
 
         <strong>
@@ -463,14 +461,14 @@ export default function ChildView({ onBack }) {
         </strong>
 
 
-        <button
-          className="rmc-btn"
+        <Button
+          variant="primary"
           onClick={() =>
             changeDate(1)
           }
         >
           Next →
-        </button>
+        </Button>
 
       </div>
 

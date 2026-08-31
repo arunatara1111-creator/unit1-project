@@ -6,7 +6,7 @@ import React, {
 } from "react";
 
 import Shell from "./Shell";
-import TopBar from "./TopBar";
+import TopBar from "../../components/TopBar";
 import StatsCards from "./StatsCards";
 import CompletionChart from "./CompletionChart";
 import TaskList from "./TaskList";
@@ -259,7 +259,6 @@ export default function ParentView({ onBack }) {
     <Shell>
       <TopBar
         title="Parent dashboard"
-        onBack={onBack}
         accent={TOKENS.skyDeep}
       />
 

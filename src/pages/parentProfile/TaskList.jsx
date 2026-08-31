@@ -4,6 +4,7 @@ import {
   Trash2,
   Pencil,
 } from "lucide-react";
+import Button from "../../components/Button";
 
 export default function TaskList({
   tasks,
@@ -57,28 +58,23 @@ export default function TaskList({
             {task.label}
           </div>
 
-          <button
-            className="rmc-btn"
-            onClick={() =>
-              handleEdit(task)
-            }
-            aria-label={`Edit ${task.label}`}
+          <Button
+           variant="primary"
+           className="rmc-icon-btn"
+           onClick={() => handleEdit(task)}
+           aria-label={`Edit ${task.label}`}
           >
-            <Pencil size={15} />
-          </button>
+          <Pencil size={15} />
+          </Button>
 
-          <button
-            className="rmc-btn rmc-delete-btn"
-            onClick={() =>
-              onRemove(task.id)
-            }
-            aria-label={`Remove ${task.label}`}
+          <Button
+           variant="danger"
+           className="rmc-icon-btn"
+           onClick={() => onRemove(task.id)}
+           aria-label={`Remove ${task.label}`}
           >
-            <Trash2
-              size={15}
-              color="#B8402C"
-            />
-          </button>
+          <Trash2 size={15}  />
+         </Button>
         </div>
       ))}
 
