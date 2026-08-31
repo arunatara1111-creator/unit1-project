@@ -8,7 +8,7 @@ Child.css
   min-height: 100vh;
   background: #fffbf2;
   color: #1e293b;
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont,
+  font-family: "Nunito", 
     "Segoe UI", sans-serif;
 
   padding: 24px;
@@ -317,6 +317,10 @@ Child.css
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Individual task */
