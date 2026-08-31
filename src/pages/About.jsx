@@ -85,7 +85,7 @@ function About() {
 
       <section>
         <h2>How Bright Steps Works</h2>
-        <ol>
+        <ul>
             <li>1. The child views their daily tasks.</li>
 
             <li>2. The child completes each task.</li>
@@ -95,7 +95,7 @@ function About() {
             <li>4. Parents can review progress.</li>
 
             <li>5. The child builds consistent daily habits.</li>
-        </ol>
+        </ul>
       </section>
 
 
