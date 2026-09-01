@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./styles/parentView.css";
 
 export default function Shell({ children }) {

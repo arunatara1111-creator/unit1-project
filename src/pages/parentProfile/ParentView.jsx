@@ -1,5 +1,5 @@
 
-import React, {
+import {
   useState,
   useEffect,
   useCallback,
@@ -41,7 +41,8 @@ export default function ParentView({ onBack }) {
   // --------------------------------
 
   const loadWeek = useCallback(async (currentTasks) => {
-    const days = [];
+    try{
+      const days = [];
 
     for (let i = 6; i >= 0; i--) {
       const d = todayStr(-i);
@@ -65,6 +66,10 @@ export default function ParentView({ onBack }) {
     }
 
     setWeek(days);
+  }catch(error){
+    console.error("Week load error:",error);
+    setWeek([]);
+  }
   }, []);
 
   // --------------------------------
@@ -72,6 +77,7 @@ export default function ParentView({ onBack }) {
   // --------------------------------
 
   const loadTasks = useCallback(async () => {
+    try{
     const taskVal =
       await storageGet("routine-tasks");
 
@@ -91,6 +97,13 @@ export default function ParentView({ onBack }) {
 
       await loadWeek(DEFAULT_TASKS);
     }
+  }catch(error){
+    console.error("Task load error:",error);
+
+    //Fall back to defaults so the dashboard still renders instead of crashing.
+    setTasks(DEFAULT_TASKS);
+    await loadWeek(DEFAULT_TASKS);
+  }
   }, [loadWeek]);
 
   // --------------------------------
@@ -99,6 +112,7 @@ export default function ParentView({ onBack }) {
 
   useEffect(() => {
     async function loadData() {
+      try{
       await loadTasks();
 
       const logVal =
@@ -109,9 +123,14 @@ export default function ParentView({ onBack }) {
           ? JSON.parse(logVal)
           : {}
       );
+    }catch(error){
+      console.error("Dashboard load error:",error);
+      setLog({});
+    }finally{
 
       setLoading(false);
     }
+  }
 
     loadData();
   }, [date, loadTasks]);
@@ -164,6 +183,8 @@ export default function ParentView({ onBack }) {
 
     setTasks(next);
 
+    try{
+
     await storageSet(
       "routine-tasks",
       next
@@ -173,6 +194,9 @@ export default function ParentView({ onBack }) {
 
     setNewLabel("");
     setNewTime("");
+  }catch(error){
+    console.error("Add task error:",error);
+  }
   };
 
   // --------------------------------
@@ -194,6 +218,8 @@ export default function ParentView({ onBack }) {
 
     setTasks(next);
 
+    try{
+
     // THIS is what connects
     // Parent → Child
     await storageSet(
@@ -202,7 +228,10 @@ export default function ParentView({ onBack }) {
     );
 
     await loadWeek(next);
-  };
+  }catch(error){
+    console.error("Edit task error:",error);
+  }
+};
 
   // --------------------------------
   // DELETE TASK
@@ -215,12 +244,16 @@ export default function ParentView({ onBack }) {
 
     setTasks(next);
 
+    try{
     await storageSet(
       "routine-tasks",
       next
     );
 
     await loadWeek(next);
+  }catch(error){
+    console.error("Remove task error:",error);
+  }
   };
 
   const done = tasks.filter(
