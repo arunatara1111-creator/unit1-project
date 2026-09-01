@@ -23,7 +23,7 @@ import {
 
 import { TOKENS } from "../constants/tokens";
 
-export default function ParentView({ onBack }) {
+export default function ParentView() {
   const [tasks, setTasks] = useState(DEFAULT_TASKS);
   const [log, setLog] = useState({});
   const [week, setWeek] = useState([]);
