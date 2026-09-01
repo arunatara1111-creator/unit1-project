@@ -19,7 +19,7 @@ export default function AddTaskForm({
     if (!newPeriod) {
       nextErrors.period = "Please choose a routine period.";
     }
-
+    
     if (!newTime) {
       nextErrors.time = "Please choose a time.";
     }
