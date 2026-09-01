@@ -1,4 +1,3 @@
-import React from "react";
 import { Rocket, Star } from "lucide-react";
 import { TOKENS } from "../constants/tokens";
 

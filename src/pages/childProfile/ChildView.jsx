@@ -1,6 +1,6 @@
 
-import React, { useEffect, useMemo, useState } from "react";
-import { Sun, Moon, Star, Rocket } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Sun, Moon, Rocket } from "lucide-react";
 import confetti from "canvas-confetti";
 
 import Shell from "./Shell";
@@ -139,7 +139,9 @@ export default function ChildView({ onBack }) {
       try {
 
         const updatedTasks =
-          JSON.parse(value);
+        typeof value === "string"
+          ?JSON.parse(value)
+          :value;
 
 
         setTasks(updatedTasks);
@@ -243,15 +245,6 @@ export default function ChildView({ onBack }) {
     [tasks]
   );
 
-  const afternoonTasks = useMemo(
-    () =>
-      tasks.filter(
-        (task) =>
-          task.period === "afternoon"
-      ),
-    [tasks]
-  );
-
   const eveningTasks = useMemo(
     () =>
       tasks.filter(
@@ -350,7 +343,9 @@ export default function ChildView({ onBack }) {
       current.getDate() + amount
     );
 
-
+    if (amount > 0 && date >= todayStr()) {
+      return;
+    }
     const nextDate =
       current
         .toISOString()
@@ -463,7 +458,8 @@ export default function ChildView({ onBack }) {
         <Button
           variant="primary"
           onClick={() =>
-            changeDate(1)
+            changeDate(1)}
+            disabled={date >= todayStr()
           }
         >
           Next →
@@ -476,6 +472,7 @@ export default function ChildView({ onBack }) {
       <ProgressCard
         done={completedCount}
         total={totalTasks}
+        pct={progress}
         launched={launched}
       />
 
@@ -536,24 +533,6 @@ export default function ChildView({ onBack }) {
             />
           }
           tasks={morningTasks}
-          log={log}
-          onToggle={toggleTask}
-        />
-
-      )}
-
-      {/* AFTERNOON */}
-      
-      {afternoonTasks.length > 0 && (
-
-        <TaskGroup
-          title="Afternoon"
-          icon={
-            <Star
-              size={20}
-            />
-          }
-          tasks={afternoonTasks}
           log={log}
           onToggle={toggleTask}
         />
